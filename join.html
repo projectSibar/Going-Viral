@@ -1,0 +1,309 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ko">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" href="assets/img/favicon.ico" type="image/ico">
+      <!-- Plugins CSS -->
+      <link href="assets/css/plugins/plugins.css" rel="stylesheet">
+      <!-- Main CSS -->
+    <link href="assets/css/theme.min.css" rel="stylesheet">
+    
+    <!-- load css for cubeportfolio -->
+    <link rel="stylesheet" type="text/css" href="assets/css/cubeportfolio.min.css">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <!-- Quill editor stylesheet -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <!--Icons-->
+    <link href="assets/fonts/iconsmind/iconsmind.css" rel="stylesheet">
+    <link href="assets/fonts/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@100..900&display=swap"
+        rel="stylesheet">
+    <title>모두에게 알려 주고 싶은, 입소문</title>
+</head>
+
+<body>
+  <div id="preloader">
+    <div id="preloader-inner"></div>
+</div><!--/preloader-->
+
+<!-- Site Overlay -->
+<div class="site-overlay"></div>
+
+<nav class="navbar navbar-expand-lg navbar-light navbar-transparent bg-faded nav-sticky">
+  <!-- navbar -->
+  <div class="container">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">
+          <img class='logo logo-dark' src="assets/img/logo.png" alt="">
+          <img class='logo logo-light hidden-md-down' src="assets/img/logo-light.png" alt="">
+      </a>
+      <div id="navbarNavDropdown" class="navbar-collapse collapse">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a class="nav-link" aria-expanded="false" href="#">처음으로</a>
+                  
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link " aria-expanded="false">우리는</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link " aria-expanded="false">나에게 추천된 정보</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">전체 검색</a>
+              </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">회원 정보 관리</a>
+              </li>
+          </ul>
+              
+      </div>
+        <a class="navbar-brand btn-sm text-white-gray" href="#">Login</a>
+        <a class="navbar-brand btn-sm text-white-gray" href="#">Join Us</a>
+            <!-- <div class=" navbar-right-elements">
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="javascript:void(0)" class="search-open"><i class="ti-search"></i></a></li>
+                    <li class="list-inline-item"><a href="javascript:void(0)" class=" menu-btn"><i class="ti-shopping-cart"></i> <span class="badge badge-default">3</span></a></li>
+                </ul>
+            </div> -->
+            <!-- right nav icons -->
+            
+  </div>
+</nav>
+<div class="bg-parallax fullscreen parallax-overlay" data-jarallax='{"speed": 0.2}' style='background-image: url("assets/img/bg10.jpg")'>
+    <div class="d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 ml-auto mr-auto text-center">
+                    <div class="hero-text-style1">
+                        <div class="tlt h1 font700 text-white text-capitalize mb20">
+                            <ul class="texts">                                       
+                                <li class="text-capitalize" data-out-effect="fadeOut" data-in-effect="fadeIn">나에게 꼭 필요한 정보만 모았다.</li>
+                                <li class="text-capitalize" data-out-effect="fadeOut" data-in-effect="fadeIn">한 눈에 보이는 나에게 필요한 정책들</li>
+                                <li class="text-capitalize" data-out-effect="fadeOut" data-in-effect="fadeIn">지금 이 시간에도 234명이 이용중입니다.</li>
+                            </ul>
+                        </div><!--/.tlt-->
+                        <p class="lead text-white-gray">
+                            모두에게 꼭 알려 주고 싶은, 입소문
+                        </p>
+                        <p class="lead text-white-gray">
+                          회원가입 페이지 입니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!--hero-->  
+<form action="join" method="post">
+    <section class="position-relative">
+        <div class="container py-7 py-lg-12">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+                    <!--Element title-->
+              <div class="d-flex align-items-center mb-4">
+                  <h6 class="mb-0 me-3 me-md-4 h3">필수 입력 정보</h6>
+                  <div class="border-bottom flex-grow-1"></div>
+              </div>
+                    
+              <!--Element-->
+              <div class="mb-3">
+                  <label for="formGroupExampleInput" class="form-label">이름</label>
+                  <input type="text" class="form-control" id="name"
+                      placeholder="이름을 입력해주세요.">
+              </div>
+              <br>
+              <div class="mb-3">
+                <form class="row g-3">
+                  <div class="col-12">
+                    <label for="formGroupExampleInput" class="form-label">이메일</label>
+                    <input type="email" class="form-control" id="mail" placeholder="이메일을 입력해주세요.">
+                    <br>
+                    <div>
+                      <input type="button" class="btn btn-primary align-content-center" value="중복 이메일 확인" onclick="checkEmail();">
+                    </div>
+                    
+                  </div>
+                </form>
+              </div>
+              <br>
+              <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">비밀번호</label>
+                <input type="password" class="form-control" id="pw"
+                    placeholder="비밀번호를 입력해주세요.">
+              </div>
+              <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">비밀번호 확인</label>
+                <input type="password" class="form-control" id="pw2"
+                    placeholder="비밀번호를 입력해주세요.">
+              </div>
+              <br>
+              <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">전화번호</label>
+                <input type="text" class="form-control" id="phoneNumber"
+                    placeholder="전화번호를 입력해주세요">
+              </div>
+              <!--Element divider-->
+              <hr class="my-7">
+              <form class="row g-3">
+                <div class="col-12">
+                  <label for="inputAddress" class="form-label">우편번호</label>
+                  <input type="hidden" id="confmKey" name="confmKey" value="">
+                  <input type="text" class="form-control" id="zipNo" name="zipNo" readonly style="width:100px" placeholder="우편번호">
+                  <br>
+                  <label for="inputAddress" class="form-label">도로명주소</label>
+                  <input type="text" class="form-control" id="roadAddrPart1" name="zipNo" readonly style="width:85%" placeholder="도로명주소">
+                  <br>
+                  <label for="inputAddress" class="form-label">상세 주소</label>
+                  <input type="text" class="form-control" id="addrDetail" style="width: 85%" value="" placeholder="광주광역시 남구 송암로">
+                  <br>
+                  <input type="text"class="form-control"  id="roadAddrPart2"  style="width: 85%" value="" placeholder="60 스마트인재개발원">
+                  <br>
+                  <input type="button" class="btn btn-primary align-content-center" value="주소검색" onclick="goPopup();">
+                </div>
+              </form>
+              <!--Element divider-->
+              <hr class="my-7">
+              <div class="d-flex align-items-center mb-4">
+                <h6 class="mb-0 me-3 me-md-4 h3">유저기반 필터링 필수 정보</h6>
+                <div class="border-bottom flex-grow-1"></div>
+              </div>
+              <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">직업</label>
+                <input type="text" class="form-control" id="job"
+                    placeholder="직업을 입력해주세요.">
+              </div>
+              <br>
+              <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">월소득</label>
+                <input type="number" class="form-control" id="salary"
+                    placeholder="만원 단위로 금액을 입력해주세요."><label class="form-label">만원</label>
+              </div>
+              <br>
+              <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">여성이라면 출산을 예정하거나 6살 이하의 자녀가 있으십니까</label><br>
+                <input type="checkbox" id="pregnancy">
+                <label for="formGroupExampleInput" class="form-label">네, 출산예정이거나 6살이하의 자녀가 있습니다.</label>
+              </div>
+              <br>
+              <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">반려동물을 키우고 계십니까?</label><br>
+                <input type="checkbox" id="animal">
+                <label for="formGroupExampleInput" class="form-label">네, 반려동물을 키우고 있습니다.</label>
+              </div>         
+              <br>
+              <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">육아로 인해 경력이 단절되어 재취업할 계획이 있으십니까?</label><br>
+                <input type="checkbox" id="reWork">
+                <label for="formGroupExampleInput" class="form-label">네, 재취업할 의사가 있습니다.</label>
+              </div>
+              <br>
+              <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">자동차를 소유하고 계십니까?</label><br>
+                <label for="formGroupExampleInput" class="form-label">차량명</label>
+                  <input type="text" class="form-control" id="name"
+                      placeholder="차량명을 입력해주세요">
+                  <label for="formGroupExampleInput" class="form-label">주요 연료</label><br>
+                  <input type="checkbox" id="carCaterogy">&nbsp;
+                  <label for="formGroupExampleInput" class="form-label">휘발유</label>&nbsp; &nbsp;
+                  <input type="checkbox" id="carCaterogy">&nbsp;
+                  <label for="formGroupExampleInput" class="form-label">디젤</label>&nbsp; &nbsp;
+                  <input type="checkbox" id="carCaterogy">&nbsp;
+                  <label for="formGroupExampleInput" class="form-label">하이브리드</label>&nbsp; &nbsp;
+                  <input type="checkbox" id="carCaterogy">&nbsp;
+                  <label for="formGroupExampleInput" class="form-label">전기차</label>&nbsp; &nbsp;
+                
+              </div>
+
+              <!--Element divider-->
+              <hr class="my-7">
+              <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">입소문 약관 동의</label><br><br><br>
+                  <textarea class="col form-control-plaintext align-content-center " cols="100" rows="10">
+                    네이버 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 다양한 네이버 서비스의 이용과 관련하여 네이버 서비스를 제공하는 네이버 주식회사(이하 ‘네이버’)와 이를 이용하는 네이버 서비스 회원(이하 ‘회원’) 또는 비회원과의 관계를 설명하며, 아울러 여러분의 네이버 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.
+                    네이버 서비스를 이용하시거나 네이버 서비스 회원으로 가입하실 경우 여러분은 본 약관 및 관련 운영 정책을 확인하거나 동의하게 되므로, 잠시 시간을 내시어 주의 깊게 살펴봐 주시기 바랍니다.
+                    다양한 네이버 서비스를 즐겨보세요.
+                    네이버는 www.naver.com을 비롯한 네이버 도메인의 웹사이트 및 응용프로그램(어플리케이션, 앱)을 통해 정보 검색, 다른 이용자와의 커뮤니케이션, 콘텐츠 제공, 상품 쇼핑 등 여러분의 생활에 편리함을 더할 수 있는 다양한 서비스를 제공하고 있습니다.
+                    여러분은 PC, 휴대폰 등 인터넷 이용이 가능한 각종 단말기를 통해 각양각색의 네이버 서비스를 자유롭게 이용하실 수 있으며, 개별 서비스들의 구체적인 내용은 각 서비스 상의 안내, 공지사항, 네이버 웹고객센터(이하 ‘고객센터’) 도움말 등에서 쉽게 확인하실 수 있습니다.
+                    네이버는 기본적으로 여러분 모두에게 동일한 내용의 서비스를 제공합니다. 다만, '청소년보호법' 등 관련 법령이나 기타 개별 서비스 제공에서의 특별한 필요에 의해서 연령 또는 일정한 등급을 기준으로 이용자를 구분하여 제공하는 서비스의 내용, 이용 시간, 이용 횟수 등을 다르게 하는 등 일부 이용을 제한하는 경우가 있습니다. 자세한 내용은 역시 각 서비스 상의 안내, 공지사항, 고객센터 도움말 등에서 확인하실 수 있습니다.
+                    네이버 서비스에는 기본적으로 본 약관이 적용됩니다만 네이버가 다양한 서비스를 제공하는 과정에서 부득이 본 약관 외 별도의 약관, 운영정책 등을 적용하는 경우(예, 네이버페이, V LIVE 등)가 있습니다. 그리고 네이버 계열사가 제공하는 특정 서비스의 경우에도(예, LINE, SNOW등) 해당 운영 회사가 정한 고유의 약관, 운영정책 등이 적용될 수 있습니다. 이러한 내용은 각각의 해당 서비스 초기 화면에서 확인해 주시기 바랍니다.
+                    회원으로 가입하시면 네이버 서비스를 보다 편리하게 이용할 수 있습니다.
+                    여러분은 본 약관을 읽고 동의하신 후 회원 가입을 신청하실 수 있으며, 네이버는 이에 대한 승낙을 통해 회원 가입 절차를 완료하고 여러분께 네이버 서비스 이용 계정(이하 ‘계정’)을 부여합니다. 계정이란 회원이 네이버 서비스에 로그인한 이후 이용하는 각종 서비스 이용 이력을 회원 별로 관리하기 위해 설정한 회원 식별 단위를 말합니다. 회원은 자신의 계정을 통해 좀더 다양한 네이버 서비스를 보다 편리하게 이용할 수 있습니다. 이와 관련한 상세한 내용은 계정 운영정책 및 고객센터 내 네이버 회원가입 방법 등에서 확인해 주세요.
+                    네이버는 단체에 속한 여러 구성원들이 공동의 계정으로 네이버 서비스를 함께 이용할 수 있도록 단체회원 계정도 부여하고 있습니다. 단체회원 구성원들은 하나의 계정 및 아이디(ID)를 공유하되 각자 개별적으로 설정한 비밀번호를 입력하여 계정에 로그인하고 각종 서비스를 이용하게 됩니다. 단체회원은 관리자와 멤버로 구성되며, 관리자는 구성원 전부로부터 권한을 위임 받아 단체회원을 대표하고 단체회원 계정을 운용합니다.
+                    따라서 관리자는 단체회원 계정을 통해 별도 약관 또는 기존 약관 개정에 대해 동의하거나 단체회원에서 탈퇴할 수 있고, 멤버들의 단체회원 계정 로그인 방법 및 이를 통한 게시물 게재 등 네이버 서비스 이용을 관리(게시물 삭제 포함)할 수 있습니다. 본 약관에서 규정한 사항은 원칙적으로 구성원 모두에게 적용되며, 각각의 구성원은 다른 구성원들의 단체회원 계정 및 아이디(ID)를 통한 서비스 이용에 관해 연대책임을 부담합니다.
+                  </textarea>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck" checked>
+                    <label class="form-check-label" for="gridCheck">
+                        <b>약관에 동의 합니다.</b>
+                    </label>
+                  </div>
+              </div>
+              <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">개인정보 수집 및 활용 동의</label><br><br><br>
+                <textarea class="col form-control-plaintext align-content-center " cols="60" rows="10">
+                    c법정대리인DI) : 탈퇴일로부터 6개월 보관
+                  탈퇴한 이용자의 휴대전화번호(복호화가 불가능한 일방향 암호화(해시처리)) : 탈퇴일로부터 6개월 보관
+                  - QR코드 복구 요청 대응
+                  QR코드 등록 정보:삭제 시점으로부터6개월 보관
+                  - 스마트플레이스 분쟁 조정 및 고객문의 대응
+                  휴대전화번호:등록/수정/삭제 요청 시로부터 최대1년
+                  - 네이버 플러스 멤버십 서비스 혜택 중복 제공 방지
+                  암호화처리(해시처리)한DI :혜택 제공 종료일로부터6개월 보관
+                  - 지식iN eXpert 재가입 신청 및 부정 이용 방지
+                  ID : 서비스 탈퇴 후 6개월 보관
+                  eXpert 서비스 및 eXpert 센터 가입 등록정보 : 신청일로부터 6개월(등록 거절 시, 거절 의사 표시한 날로부터 30일) 보관
+                  전자상거래 등에서의 소비자 보호에 관한 법률, 전자금융거래법, 통신비밀보호법 등 법령에서 일정기간 정보의 보관을 규정하는 경우는 아래와 같습니다. 네이버는 이 기간 동안 법령의 규정에 따라 개인정보를 보관하며, 본 정보를 다른 목적으로는 절대 이용하지 않습니다.
+                  - 전자상거래 등에서 소비자 보호에 관한 법률
+                  계약 또는 청약철회 등에 관한 기록: 5년 보관
+                </textarea>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="gridCheck" checked>
+                  <label class="form-check-label" for="gridCheck">
+                  <b>개인정보 수집에 동의 합니다.</b>
+                  </label>
+                </div>
+              </div>
+              <input type="button" class="btn btn-success" style="text-align:center; display:inline-block; margin: 0 auto;"  value="회원 가입" onclick="join();">
+              <input type="button" class="btn btn-warning" style="text-align:center; display:inline-block; margin: 0 auto;"  value="초기화" onclick="reset();">  
+            </div>
+          </div>
+        </div>
+    </section>  
+  </form>       
+        <!-- scripts -->
+      <script language="javascript">
+        function goPopup(){
+        // 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(https://www.juso.go.kr/addrlink/addrLinkUrl.do)를 호출하게 됩니다.
+        var pop = window.open("/popup/jusoPopup.jsp","pop","width=570,height=420, scrollbars=yes, resizable=yes"); 
+        
+          // 모바일 웹인 경우, 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(https://www.juso.go.kr/addrlink/addrMobileLinkUrl.do)를 호출하게 됩니다.
+            //var pop = window.open("/popup/jusoPopup.jsp","pop","scrollbars=yes, resizable=yes"); 
+          }
+          /** API 서비스 제공항목 확대 (2017.02) **/
+          function jusoCallBack(roadFullAddr,roadAddrPart1,addrDetail,roadAddrPart2,engAddr, jibunAddr, zipNo, admCd, rnMgtSn, bdMgtSn
+                    , detBdNmList, bdNm, bdKdcd, siNm, sggNm, emdNm, liNm, rn, udrtYn, buldMnnm, buldSlno, mtYn, lnbrMnnm, lnbrSlno, emdNo){
+          // 팝업페이지에서 주소입력한 정보를 받아서, 현 페이지에 정보를 등록합니다.
+          document.form.roadAddrPart1.value = roadAddrPart1;
+          document.form.roadAddrPart2.value = roadAddrPart2;
+          document.form.addrDetail.value = addrDetail;
+          document.form.zipNo.value = zipNo;
+          }
+      </script>
+      <script src="assets/js/theme.bundle.js"></script>
+      <script src="assets/js/plugins/plugins.js"></script> 
+      <script src="assets/js/assan.custom.js"></script>
+        
+    </body>
+
+</html>

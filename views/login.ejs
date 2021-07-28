@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>모두에게 알려주고 싶은, 입소문</title>
+  <!-- Plugins CSS -->
+  <link href="/css/plugins/plugins.css" rel="stylesheet">
+  <!-- load css for cubeportfolio -->
+  <link rel="stylesheet" type="text/css" href="/css/cubeportfolio.min.css">
+  <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+  <div id="preloader">
+    <div id="preloader-inner"></div>
+  </div><!--/preloader-->
+  <!-- navbar -->
+  <div class="container">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="/">
+        <img class='logo logo-dark' src="/img/logo.png" alt="">
+        <img class='logo logo-light hidden-md-down' src="/img/logo-light.png" alt="">
+    </a>
+    <div id="navbarNavDropdown" class="navbar-collapse collapse">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" aria-expanded="false" href="#">처음으로</a>
+                
+            </li>
+            <li class="nav-item">
+                <a class="nav-link "  aria-expanded="false">우리는</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " aria-expanded="false">나에게 추천된 정보</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">전체 검색</a>
+            </li>
+             <li class="nav-item">
+                <a class="nav-link"  href="#">회원 정보 관리</a>
+            </li>
+          </ul>  
+    </div>
+  <!-- footer-->     
+  <footer class="footer footer-standard pt50 pb10">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb40">
+                <h3>About Us</h3>
+                 <p>
+                  &nbsp; 20여개의 공공 정책 데이터를 크롤링하여, 고객의 선호 정보 및 회원 정보를 기반으로 데이터를 추천해주고 있습니다.<br>
+                  &nbsp; 전체 검색을 활용하여 미처 추천되지 못하는 궁금한 정보도 입소문을 통해 한번에 검색 할 수 있습니다.<br>
+                  &nbsp; 이젠 입소문 하나로 공공정책에 참여하여 풍요로운 삶을 누리시길 바랍니다.
+                </p>
+    <a href="#" class="btn btn-white-outline btn-sm">Learn More</a>
+            </div>
+            <div class="col-lg-2 col-md-6 mb40">
+                <h3>Quick links</h3>
+                <ul class="list-unstyled footer-list-item">
+                    <li>
+                        <a href="#">
+                            About
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                           News
+                        </a>
+                    </li>
+                     <li>
+                        <a href="#">
+                           FAQS
+                        </a>
+                    </li>
+                     <li>
+                        <a href="#">
+                           Contact
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Term & conditions
+                        </a>
+                    </li>
+                     <li>
+                        <a href="#">
+                            Privacy & policy
+                        </a>
+                    </li>
+                </ul>
+              </div>
+        </div>
+    </div>
+</footer><!--/footer-->
+<div class="footer-bottomAlt">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+
+                <span>&copy; Copyright 2018. All Right Reserved</span>
+            </div>
+        </div>
+    </div>
+</div><!--/footer bottom-->
+<script src="/js/plugins/plugins.js"></script> 
+<script src="/js/assan.custom.js"></script> 
+<script type="text/javascript" src="slick/slick.min.js"></script>
+<!-- load cubeportfolio -->
+<script type="text/javascript" src="/js/jquery.cubeportfolio.min.js"></script>
+<script>
+  //projects
+  (function ($, window, document, undefined) {
+      'use strict';
+
+      // init cubeportfolio
+      $('#js-grid-lightbox-gallery').cubeportfolio({
+          filters: '#js-filters-lightbox-gallery1, #js-filters-lightbox-gallery2',
+          layoutMode: 'grid',
+          mediaQueries: [{
+                  width: 1500,
+                  cols: 4
+              }, {
+                  width: 1100,
+                  cols: 3
+              }, {
+                  width: 800,
+                  cols: 3
+              }, {
+                  width: 480,
+                  cols: 2,
+                  options: {
+                      caption: ''
+                  }
+              }],
+          defaultFilter: '*',
+          animationType: 'flipOutDelay',
+          gapHorizontal: 15,
+          gapVertical: 15,
+          gridAdjustment: 'responsive',
+          caption: 'overlayBottomAlong',
+          displayType: 'sequentially',
+          displayTypeSpeed: 100,
+          // lightbox
+          lightboxDelegate: '.cbp-lightbox',
+          lightboxGallery: true,
+          lightboxTitleSrc: 'data-title',
+          lightboxCounter: '<div class="cbp-popup-lightbox-counter">{{current}} of {{total}}</div>'
+      });
+  })(jQuery, window, document);
+</script>
+</body>
+</html>
