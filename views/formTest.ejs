@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action = "/formtest_process" method="POST">
+    이메일 : <input type="email" name = "email" placeholder="abc@email.com"><br>
+    비밀번호 : <input type="password" name = "password" placeholder="password"><br>
+    이름 : <input type="text" name = "name" placeholder="이름"><br>
+    생일 : <input type="date" name = "birth" ><br>
+    주소 : <input type="text" name="address" placeholder="ㅈ주소"><br>
+
+    휴대전화번호 : <input type="tel" name = "number"><br>
+    직업 : <input type="text" name = "job" placeholder="직업"><br>
+    월급 : <input type="text" name = "pay" placeholder="월급(만원단위)"><br>
+    출산여부 : 예 <input type="radio" name ="childbirth" value="true">
+              아니요 <input type="radio" name ="childbirth" value="false"><br>
+    타고다니는 차종 : <input type="text" name = "car" placeholder="차종"><br>
+    주요 연료 : 휘발유 <input type="radio" name = "fuel" value="휘발유">
+     디젤 <input type="radio" name = "fuel"value="디젤">
+     하이브리드 <input type="radio" name = "fuel"value="하이브리드">
+    전기차 <input type="radio" name = "fuel"value="전기차"><br>
+    반려동물 여부 : 예 <input type="radio" name ="pet" value="true">
+    아니요 <input type="radio" name ="pet" value="false"><br>
+    경력단절 여부 : 예 <input type="radio" name ="careerbreak" value="true">
+    아니요 <input type="radio" name ="careerbreak" value="false"><br>
+    <input type="submit" value="회원가입">
+  </form>
+</body>
+</html>

@@ -27,10 +27,15 @@ app.get('/join',function(request,response){
 app.get('/login',function(request,response){
   response.render('login',{});
 });
+app.get('/formtest',function(request,response){
+  response.render('formTest',{});
+});
+app.post('/formtest_process',function(request,response){
+  member.createMember(request,response);
+});
 //회원가입시 
 app.post('/join_process',function(request,response){
   console.log("메인페이지");
   member.showMembers(request,response);
 });
-
 app.listen(3000);
