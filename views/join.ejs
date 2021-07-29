@@ -6,30 +6,31 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="icon" href="/img/favicon.ico" type="image/ico">
+    <link rel="icon" href="img/favicon.ico" type="image/ico">
       <!-- Plugins CSS -->
-      <link href="/css/plugins/plugins.css" rel="stylesheet">
+      <link href="css/plugins/plugins.css" rel="stylesheet">
       <!-- Main CSS -->
-    <link href="/css/theme.min.css" rel="stylesheet">
+    <link href="css/theme.min.css" rel="stylesheet">
     
     <!-- load css for cubeportfolio -->
-    <link rel="stylesheet" type="text/css" href="/css/cubeportfolio.min.css">
-    <link href="/css/style.css" rel="stylesheet">
-    
+    <link rel="stylesheet" type="text/css" href="css/cubeportfolio.min.css">
+    <link href="css/style.css" rel="stylesheet">
     <!-- Quill editor stylesheet -->
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <!--Icons-->
-    <link href="/fonts/iconsmind/iconsmind.css" rel="stylesheet">
-    <link href="/fonts/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="fonts/iconsmind/iconsmind.css" rel="stylesheet">
+    <link href="fonts/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <!--Google fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@100..900&display=swap"
         rel="stylesheet">
-    <title>모두에게 알려 주고 싶은, 입소문</title>
+       
+    
+    <title>입소문</title>
+   
 </head>
-
 <body>
   <div id="preloader">
     <div id="preloader-inner"></div>
@@ -45,8 +46,8 @@
           <span class="navbar-toggler-icon"></span>
       </button>
       <a class="navbar-brand" href="/">
-          <img class='logo logo-dark' src="/img/logo.png" alt="">
-          <img class='logo logo-light hidden-md-down' src="/img/logo-light.png" alt="">
+          <img class='logo logo-dark' src="img/logo.png" alt="">
+          <img class='logo logo-light hidden-md-down' src="img/logo-light.png" alt="">
       </a>
       <div id="navbarNavDropdown" class="navbar-collapse collapse">
           <ul class="navbar-nav ml-auto">
@@ -69,8 +70,6 @@
           </ul>
               
       </div>
-        <a class="navbar-brand btn-sm text-white-gray" href="#">Login</a>
-        <a class="navbar-brand btn-sm text-white-gray" href="#">Join Us</a>
             <!-- <div class=" navbar-right-elements">
                 <ul class="list-inline">
                     <li class="list-inline-item"><a href="javascript:void(0)" class="search-open"><i class="ti-search"></i></a></li>
@@ -81,7 +80,7 @@
             
   </div>
 </nav>
-<div class="bg-parallax fullscreen parallax-overlay" data-jarallax='{"speed": 0.2}' style='background-image: url("/img/bg10.jpg")'>
+<div class="bg-parallax fullscreen parallax-overlay" data-jarallax='{"speed": 0.2}' style='background-image: url("img/bg10.jpg")'>
     <div class="d-flex align-items-center">
         <div class="container">
             <div class="row">
@@ -106,7 +105,7 @@
         </div>
     </div>
 </div><!--hero-->  
-<form action="/join_process" method="post">
+<form action="/join_process" method="POST">
     <section class="position-relative">
         <div class="container py-7 py-lg-12">
           <div class="row">
@@ -120,59 +119,60 @@
               <!--Element-->
               <div class="mb-3">
                   <label for="formGroupExampleInput" class="form-label">이름</label>
-                  <input type="text" class="form-control" id="name"
-                      placeholder="이름을 입력해주세요.">
+                  <input type="text" class="form-control" id="name" 
+                      placeholder="이름을 입력해주세요." name="name">
               </div>
               <br>
               <div class="mb-3">
                 <form class="row g-3">
-                  <div class="col-12">
+                  <div class="mb-3">
                     <label for="formGroupExampleInput" class="form-label">이메일</label>
-                    <input type="email" class="form-control" id="mail" placeholder="이메일을 입력해주세요.">
+                    <input type="email" class="form-control" id="mail" placeholder="이메일을 입력해주세요." name="email">
                     <br>
                     <div>
-                      <input type="button" class="btn btn-primary align-content-center" value="중복 이메일 확인" onclick="checkEmail();">
+                      <input type="button" class="btn btn-primary align-content-center" value="중복 이메일 확인" onclick="check();">
                     </div>
-                    
                   </div>
                 </form>
               </div>
               <br>
               <div class="mb-3">
                 <label for="formGroupExampleInput" class="form-label">비밀번호</label>
-                <input type="password" class="form-control" id="pw"
-                    placeholder="비밀번호를 입력해주세요.">
+                <input type="password" class="form-control pw" id="password_1"
+                    placeholder="비밀번호를 입력해주세요." name = "password">
               </div>
               <div class="mb-3">
                 <label for="formGroupExampleInput" class="form-label">비밀번호 확인</label>
-                <input type="password" class="form-control" id="pw2"
-                    placeholder="비밀번호를 입력해주세요.">
+                <input type="password" id="password_2" class="form-control pw" placeholder="비밀번호 확인" >
+                <label id="alert-success" style="display: none;">비밀번호가 일치합니다.</label>
+                <label id="alert-danger" style="display: none; color: #d92742; font-weight: bold; ">비밀번호가 일치하지 않습니다.</label>
               </div>
               <br>
               <div class="mb-3">
                 <label for="formGroupExampleInput" class="form-label">전화번호</label>
                 <input type="text" class="form-control" id="phoneNumber"
-                    placeholder="전화번호를 입력해주세요">
+                    placeholder="전화번호를 입력해주세요" name = "number">
+              </div>
+              <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">생년월일</label>
+                <input type="date" class="form-control" id="birthDay" name = "birth">
               </div>
               <!--Element divider-->
               <hr class="my-7">
-              <form class="row g-3">
-                <div class="col-12">
+               <form id="form" class="mb-3" name="form" method="post">
+                <div class="mb-3">
                   <label for="inputAddress" class="form-label">우편번호</label>
-                  <input type="hidden" id="confmKey" name="confmKey" value="">
                   <input type="text" class="form-control" id="zipNo" name="zipNo" readonly style="width:100px" placeholder="우편번호">
                   <br>
                   <label for="inputAddress" class="form-label">도로명주소</label>
-                  <input type="text" class="form-control" id="roadAddrPart1" name="zipNo" readonly style="width:85%" placeholder="도로명주소">
+                  <input type="text" class="form-control" id="roadAddrPart1" name="roadAddrPart1" readonly style="width:85%" placeholder="광주광역시 남구 송암로">
                   <br>
                   <label for="inputAddress" class="form-label">상세 주소</label>
-                  <input type="text" class="form-control" id="addrDetail" style="width: 85%" value="" placeholder="광주광역시 남구 송암로">
-                  <br>
-                  <input type="text"class="form-control"  id="roadAddrPart2"  style="width: 85%" value="" placeholder="60 스마트인재개발원">
+                  <input type="text" class="form-control" id="addrDetail" style="width: 85%"  placeholder="60 스마트인재개발원" name="roadAddrPart2">
                   <br>
                   <input type="button" class="btn btn-primary align-content-center" value="주소검색" onclick="goPopup();">
                 </div>
-              </form>
+               </form>
               <!--Element divider-->
               <hr class="my-7">
               <div class="d-flex align-items-center mb-4">
@@ -182,30 +182,30 @@
               <div class="mb-3">
                 <label for="formGroupExampleInput" class="form-label">직업</label>
                 <input type="text" class="form-control" id="job"
-                    placeholder="직업을 입력해주세요.">
+                    placeholder="직업을 입력해주세요." name = "job">
               </div>
               <br>
               <div class="mb-3">
                 <label for="formGroupExampleInput" class="form-label">월소득</label>
                 <input type="number" class="form-control" id="salary"
-                    placeholder="만원 단위로 금액을 입력해주세요."><label class="form-label">만원</label>
+                    placeholder="만원 단위로 금액을 입력해주세요." name = "pay"><label class="form-label">만원</label>
               </div>
               <br>
               <div class="mb-3">
                 <label for="formGroupExampleInput" class="form-label">여성이라면 출산을 예정하거나 6살 이하의 자녀가 있으십니까</label><br>
-                <input type="checkbox" id="pregnancy">
+                <input type="checkbox" id="pregnancy" value="true" name="pregnancy">
                 <label for="formGroupExampleInput" class="form-label">네, 출산예정이거나 6살이하의 자녀가 있습니다.</label>
               </div>
               <br>
               <div class="mb-3">
                 <label for="formGroupExampleInput" class="form-label">반려동물을 키우고 계십니까?</label><br>
-                <input type="checkbox" id="animal">
+                <input type="checkbox" id="animal" value="true" name="pet">
                 <label for="formGroupExampleInput" class="form-label">네, 반려동물을 키우고 있습니다.</label>
               </div>         
               <br>
               <div class="mb-3">
                 <label for="formGroupExampleInput" class="form-label">육아로 인해 경력이 단절되어 재취업할 계획이 있으십니까?</label><br>
-                <input type="checkbox" id="reWork">
+                <input type="checkbox" id="reWork" value="true" name="careerbreak">
                 <label for="formGroupExampleInput" class="form-label">네, 재취업할 의사가 있습니다.</label>
               </div>
               <br>
@@ -213,17 +213,17 @@
                 <label for="formGroupExampleInput" class="form-label">자동차를 소유하고 계십니까?</label><br>
                 <label for="formGroupExampleInput" class="form-label">차량명</label>
                   <input type="text" class="form-control" id="name"
-                      placeholder="차량명을 입력해주세요">
+                      placeholder="차량명을 입력해주세요"  name = "car">
                   <label for="formGroupExampleInput" class="form-label">주요 연료</label><br>
-                  <input type="checkbox" id="carCaterogy">&nbsp;
+                  <input type="radio" id="carCaterogy" name = "fuel" value="휘발유">&nbsp;
                   <label for="formGroupExampleInput" class="form-label">휘발유</label>&nbsp; &nbsp;
-                  <input type="checkbox" id="carCaterogy">&nbsp;
+                  <input type="radio" id="carCaterogy" name = "fuel"value="디젤">&nbsp;
                   <label for="formGroupExampleInput" class="form-label">디젤</label>&nbsp; &nbsp;
-                  <input type="checkbox" id="carCaterogy">&nbsp;
+                  <input type="radio" id="carCaterogy" name = "fuel"value="하이브리드">&nbsp;
                   <label for="formGroupExampleInput" class="form-label">하이브리드</label>&nbsp; &nbsp;
-                  <input type="checkbox" id="carCaterogy">&nbsp;
+                  <input type="radio" id="carCaterogy" name = "fuel"value="전기차">&nbsp;
                   <label for="formGroupExampleInput" class="form-label">전기차</label>&nbsp; &nbsp;
-                
+                  
               </div>
 
               <!--Element divider-->
@@ -244,7 +244,7 @@
                     따라서 관리자는 단체회원 계정을 통해 별도 약관 또는 기존 약관 개정에 대해 동의하거나 단체회원에서 탈퇴할 수 있고, 멤버들의 단체회원 계정 로그인 방법 및 이를 통한 게시물 게재 등 네이버 서비스 이용을 관리(게시물 삭제 포함)할 수 있습니다. 본 약관에서 규정한 사항은 원칙적으로 구성원 모두에게 적용되며, 각각의 구성원은 다른 구성원들의 단체회원 계정 및 아이디(ID)를 통한 서비스 이용에 관해 연대책임을 부담합니다.
                   </textarea>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck" checked>
+                    <input class="form-check-input" type="checkbox" id="gridCheck" checked name="check1" value="true">
                     <label class="form-check-label" for="gridCheck">
                         <b>약관에 동의 합니다.</b>
                     </label>
@@ -269,41 +269,85 @@
                   계약 또는 청약철회 등에 관한 기록: 5년 보관
                 </textarea>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="gridCheck" checked>
+                  <input class="form-check-input" type="checkbox" id="gridCheck" checked name="check2" value="true">
                   <label class="form-check-label" for="gridCheck">
                   <b>개인정보 수집에 동의 합니다.</b>
                   </label>
                 </div>
               </div>
               <input type="submit" class="btn btn-success" style="text-align:center; display:inline-block; margin: 0 auto;"  value="회원 가입">
-              <input type="button" class="btn btn-warning" style="text-align:center; display:inline-block; margin: 0 auto;"  value="초기화" onclick="reset();">  
+              <input type="reset" class="btn btn-warning" style="text-align:center; display:inline-block; margin: 0 auto;"  value="초기화" onclick="reset();">  
             </div>
           </div>
         </div>
     </section>  
   </form>       
-        <!-- scripts -->
+      <!-- scripts -->
+      <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+      <script>
+        $('.pw').focusout(function () {
+            var pwd1 = $("#password_1").val();
+            var pwd2 = $("#password_2").val();
+      
+            if ( pwd1 != '' && pwd2 == '' ) {
+                null;
+            } else if (pwd1 != "" || pwd2 != "") {
+                if (pwd1 == pwd2) {
+                    $("#alert-success").css('display', 'inline-block');
+                    $("#alert-danger").css('display', 'none');
+                } else {                    
+                    $("#alert-success").css('display', 'none');
+                    $("#alert-danger").css('display', 'inline-block');
+                }
+            }
+        });
+    </script>
       <script language="javascript">
-        function goPopup(){
-        // 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(https://www.juso.go.kr/addrlink/addrLinkUrl.do)를 호출하게 됩니다.
-        var pop = window.open("/popup/jusoPopup.jsp","pop","width=570,height=420, scrollbars=yes, resizable=yes"); 
-        
-          // 모바일 웹인 경우, 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(https://www.juso.go.kr/addrlink/addrMobileLinkUrl.do)를 호출하게 됩니다.
-            //var pop = window.open("/popup/jusoPopup.jsp","pop","scrollbars=yes, resizable=yes"); 
-          }
-          /** API 서비스 제공항목 확대 (2017.02) **/
-          function jusoCallBack(roadFullAddr,roadAddrPart1,addrDetail,roadAddrPart2,engAddr, jibunAddr, zipNo, admCd, rnMgtSn, bdMgtSn
-                    , detBdNmList, bdNm, bdKdcd, siNm, sggNm, emdNm, liNm, rn, udrtYn, buldMnnm, buldSlno, mtYn, lnbrMnnm, lnbrSlno, emdNo){
+        function goPopup() {
+          var pop = window.open(
+            '/popup/jusoPopup',
+            'pop',
+            'width=570,height=420, scrollbars=yes, resizable=yes'
+          );
+        }
+        function jusoCallBack(
+          roadFullAddr,
+          roadAddrPart1,
+          addrDetail,
+          roadAddrPart2,
+          engAddr,
+          jibunAddr,
+          zipNo,
+          admCd,
+          rnMgtSn,
+          bdMgtSn,
+          detBdNmList,
+          bdNm,
+          bdKdcd,
+          siNm,
+          sggNm,
+          emdNm,
+          liNm,
+          rn,
+          udrtYn,
+          buldMnnm,
+          buldSlno,
+          mtYn,
+          lnbrMnnm,
+          lnbrSlno,
+          emdNo
+        ) {
           // 팝업페이지에서 주소입력한 정보를 받아서, 현 페이지에 정보를 등록합니다.
           document.form.roadAddrPart1.value = roadAddrPart1;
-          document.form.roadAddrPart2.value = roadAddrPart2;
           document.form.addrDetail.value = addrDetail;
           document.form.zipNo.value = zipNo;
-          }
+        }
       </script>
-      <script src="/js/theme.bundle.js"></script>
-      <script src="/js/plugins/plugins.js"></script> 
-      <script src="/js/assan.custom.js"></script>
+
+      
+      <script src="js/theme.bundle.js"></script>
+      <script src="js/plugins/plugins.js"></script> 
+      <script src="js/assan.custom.js"></script>
         
     </body>
 
