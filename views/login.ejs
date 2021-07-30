@@ -30,7 +30,7 @@
                                 </div>
                                 <div class="p-3 pt-30 pb-30">
 
-                                    <form role="form">
+                                    <form role="form" action="/login_precess" method="POST">
                                         <div class="input-icon-group">
                                             <div class="d-flex flex flex-row">
                                                 <label class="flex d-flex mr-auto" for='pass'>이메일 주소</label>
@@ -40,7 +40,7 @@
                                            </div>
                                             <div class='input-icon-append'>
                                                 <i class="fa fa-user"></i>
-                                                <input placeholder="abcd@naver.com" type="text" class="form-control">
+                                                <input placeholder="abcd@naver.com" type="text" class="form-control" name="log_email">
                                             </div>
                                         </div>
                                         <div class="input-icon-group">
@@ -52,7 +52,7 @@
                                            </div>
                                             <div class='input-icon-append'>
                                                 <i class="fa fa-lock"></i>
-                                                <input id="pass" placeholder="비밀번호를 입력해주세요" type="password" class="form-control">
+                                                <input id="pass" placeholder="비밀번호를 입력해주세요" type="password" class="form-control" name="log_password">
                                             </div>
                                         </div>
                                         <div class="customUi-checkbox  pb-2">
@@ -64,7 +64,7 @@
                                         </div>
                                         <button type="submit" class="btn btn-gradient-primary btn-block btn-lg">로그인</button>
                                         <div class="pt-20 text-center">
-                                            회원가입을 하지 않으셨나요? <a href='#' class='text-primary ml-2 b-b d-inline-block pb-1'>회원가입</a>
+                                            회원가입을 하지 않으셨나요? <a href='/join' class='text-primary ml-2 b-b d-inline-block pb-1'>회원가입</a>
                                         </div>
                                        
                 <footer class="content-footer bg-white b-t">

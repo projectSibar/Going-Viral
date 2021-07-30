@@ -1,5 +1,4 @@
 const express = require('express');
-const app = express();
 const path = require('path');
 const { showMembers } = require('./config/member');
 const member = require('./config/member');
@@ -8,6 +7,9 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const bodyParser = require("body-parser");
+var expressSession = require('express-session');
+
+const app = express();
 
 //파일 연결하기
 app.use(express.static('assets'));
@@ -27,6 +29,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+//세션사용
+app.use(expressSession({
+  secret: 'my key',
+  resave: true, //세션의 세이브 정보 저장시 파일로 생성여부
+  saveUninitialized:true // 미리 만들어놓을 여부
+}));
+//라우터 생성
+//특정경로로 들어올 시 함수를 실행시킬수 있는 기능(익스프레스)
+var router = express.Router();
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
@@ -42,8 +54,11 @@ app.get('/login',function(request,response){
 });
 //회원가입시
 app.post('/join_process',function(request,response){
-  console.log("조인시 조인프로세스 들어옴");
   member.createMember(request,response);
+});
+
+app.post('/login_precess',function(request,response){
+  member.loginMember(request,response);
 });
 module.exports = app; //도로명주소 데이터 전달로 인한 모듈로 빼기
 app.listen(3000);
