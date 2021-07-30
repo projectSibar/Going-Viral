@@ -7,9 +7,12 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const bodyParser = require("body-parser");
-var expressSession = require('express-session');
+
+var router = express.Router();
 
 const app = express();
+router.use(bodyParser.urlencoded({ extended: false }));
+router.use(cookieParser());
 
 //파일 연결하기
 app.use(express.static('assets'));
@@ -29,28 +32,28 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-//세션사용
-app.use(expressSession({
-  secret: 'my key',
-  resave: true, //세션의 세이브 정보 저장시 파일로 생성여부
-  saveUninitialized:true // 미리 만들어놓을 여부
-}));
-//라우터 생성
-//특정경로로 들어올 시 함수를 실행시킬수 있는 기능(익스프레스)
-var router = express.Router();
-
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 app.get('',function(request,response){
-  response.render('index',{});
+  let userID = "";
+  if(request.cookies.id !==undefined){
+    console.log("로그인 정보있음");
+    userID = request.cookies.id;
+  }
+  response.render('index',{userID:userID});
 });
 
 app.get('/join',function(request,response){
   response.render('join',{});
 });
 app.get('/login',function(request,response){
-  response.render('login',{});
+  let userID = "";
+  if(request.cookies.id !==undefined){
+    console.log("로그인 정보있음");
+    userID = request.cookies.id;
+  }
+  response.render('login',{userId : userID});
 });
 //회원가입시
 app.post('/join_process',function(request,response){
@@ -59,6 +62,31 @@ app.post('/join_process',function(request,response){
 
 app.post('/login_precess',function(request,response){
   member.loginMember(request,response);
+});
+app.get('/main',function(request,response){
+  let userID = "";
+  if(request.cookies.id !==undefined){
+    console.log("로그인 정보있음");
+  }
+  response.render('main',{userID:userID});
+});
+app.get('/welfare',function(request,response){
+  response.render('welfare',{});//복지
+});
+app.get('/employee',function(request,response){
+  response.render('employee',{});//고용
+});
+app.get('/education',function(request,response){
+  response.render('education',{});//교육
+});
+app.get('/house',function(request,response){
+  response.render('house',{});//주거
+});
+app.get('/culture',function(request,response){
+  response.render('culture',{});//문화
+});
+app.get('/financial',function(request,response){
+  response.render('financial',{});//서민금융
 });
 module.exports = app; //도로명주소 데이터 전달로 인한 모듈로 빼기
 app.listen(3000);

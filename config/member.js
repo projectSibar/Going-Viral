@@ -42,19 +42,18 @@ exports.createMember = function(request,response){
 exports.loginMember = function(request,response){
   let log_email = request.body.log_email;
   let log_password = request.body.log_password;
-
-  console.log(log_email);
-  console.log(log_password);
   conn.query(`select * from member where email = ${log_email}`,
   function(err,memberdata){
     if(err){
        console.log(err);
     }
      if(memberdata[0].email == log_email && memberdata[0].pw == log_password){
-      response.writeHead(302, {Location: `/`});//로그인 성공시 홈으로 이동
+      response.cookie('id',log_email,{maxAge:60*60*24});// 쿠키 12시간까지 살아있음
+      console.log(request.cookies.id);
+      response.writeHead(302, {Location: `/main`});//로그인 성공시 홈으로 이동
       response.end();
      }else{
-      response.writeHead(302, {Location: `/login`});//로그인 성공시 홈으로 이동
+      response.writeHead(302, {Location: `/`});//로그인 실패시 다시 회원가입 페이지로 이동
       response.end();
      }
   })
