@@ -26,50 +26,55 @@ app.use('/slick',express.static('./slick'));
 
 app.set('views','views'); // 경로지정
 app.set('view engine','ejs');
-//json형식 주고받는 설정부분
 app.use(logger('dev'));
-app.use(express.json());
+app.use(express.json());//json형식 주고받는 설정부분
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-app.get('',function(request,response){
-  let userID = "";
-  if(request.cookies.id !==undefined){
-    console.log("로그인 정보있음");
-    userID = request.cookies.id;
-  }
-  response.render('index',{userID:userID});
+app.get('',function(request,response){ //로그인안된 메인페이지
+  response.render('index',{});
 });
 
-app.get('/join',function(request,response){
+app.get('/join',function(request,response){ //회원가입페이지로 이동
   response.render('join',{});
 });
-app.get('/login',function(request,response){
+
+app.get('/login',function(request,response){ //로그인페이지로 이동
   let userID = "";
   if(request.cookies.id !==undefined){
-    console.log("로그인 정보있음");
     userID = request.cookies.id;
+    console.log("쿠키저장" ,userID);//전에 로그인을 했다면 아이디저장
   }
-  response.render('login',{userId : userID});
+  response.render('login',{'id' : userID});
 });
-//회원가입시
-app.post('/join_process',function(request,response){
+
+app.post('/join_process',function(request,response){//실질적 회원가입 기능실행
   member.createMember(request,response);
 });
 
-app.post('/login_precess',function(request,response){
+app.post('/login_precess',function(request,response){//실질적 로그인 기능실행
   member.loginMember(request,response);
 });
-app.get('/main',function(request,response){
+
+app.get('/main',function(request,response){//로그인후 메인페이지로 이동
   let userID = "";
   if(request.cookies.id !==undefined){
-    console.log("로그인 정보있음");
+    userID = request.cookies.id;
+    console.log("쿠키저장" ,userID); //로그인후 메인에서 아이디 띄워주기 위한 쿠키저장
   }
-  response.render('main',{userID:userID});
+  response.render('main',{'id':userID});
 });
+
+app.get('/logout',function(request,response){ //로그아웃시 쿠키삭제후 로그인전 메인페이지로 이동
+  console.log('request.cookies.id >',request.cookies.id);
+  response.clearCookie('id'); //해당하는 쿠키 삭제
+  response.render('index',{});
+});
+
+//카테고리 페이지로 이동
 app.get('/welfare',function(request,response){
   response.render('welfare',{});//복지
 });
